@@ -2,3 +2,4 @@ node_modules
 *.swp
 *~
 build
+.DS_Store
