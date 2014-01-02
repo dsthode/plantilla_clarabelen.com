@@ -1,6 +1,14 @@
 {
   "name": "plantilla_clarabelen.com",
   "version": "0.1.0",
+	"description": "Plantilla para el blog clarabelen.com/inspiraciones",
+	"author": 'Damián Serrano Thode <mail@dsthode.info> (http://dsthode.info)",
+	"private": true,
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/dsthode/plantilla_clarabelen.com.git"
+	},
   "devDependencies": {
     "grunt": "*",
     "grunt-contrib-jshint": "*",
