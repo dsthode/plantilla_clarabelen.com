@@ -1,19 +1,22 @@
 {
   "name": "plantilla_clarabelen.com",
   "version": "0.1.0",
-	"description": "Plantilla para el blog clarabelen.com/inspiraciones",
-	"author": 'Damián Serrano Thode <mail@dsthode.info> (http://dsthode.info)",
-	"private": true,
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "http://github.com/dsthode/plantilla_clarabelen.com.git"
-	},
+  "description": "Plantilla para el blog clarabelen.com/inspiraciones",
+  "author": "Damián Serrano Thode <mail@dsthode.info> (http://dsthode.info)",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/dsthode/plantilla_clarabelen.com.git"
+  },
   "devDependencies": {
     "grunt": "*",
     "grunt-contrib-jshint": "*",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-cssmin": "~0.7.0",
-    "grunt-contrib-copy": "~0.5.0"
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-spritesmith": "~1.21.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-imagemin": "~0.4.0"
   }
 }

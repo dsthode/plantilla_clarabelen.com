@@ -13,9 +13,7 @@
 	<p><a href="<?php bloginfo('rss2_url'); ?>">Latest Stories RSS</a> | <a href="<?php comments_rss_link('comment feed'); ?>">Comments RSS</a></p>
 </div>
 
-
-<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/script.min.js" type="text/javascript"></script>
 
 <?php wp_footer(); ?>
 </body>
