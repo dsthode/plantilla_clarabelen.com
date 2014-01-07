@@ -1,7 +1,40 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
+
+<meta property="og:site_name" content="<?php bloginfo('name'); ?>">
+<?php if(is_singular())  { ?>
+	<meta property="og:title" content="<?php echo get_the_title(); ?>">
+	<meta property="twitter:card" content="summary">
+	<meta property="twitter:site" content="">
+	<meta property="twitter:creator" content="@clarabelengomez">
+	<meta property="og:type" content="article">
+	<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+		<meta property="twitter:title" content="<?php echo get_the_title(); ?>">
+		<meta property="og:url" content="<?php echo get_permalink(); ?>">
+		<meta property="article:published_time" content="<?php the_time('c'); ?>">
+		<meta property="article:modified_time" content="<?php the_modified_time('c'); ?>">
+		<meta property="article:publisher" content="https://www.facebook.com/inspirateconclara">
+		<meta property="article:author" content="https://www.facebook.com/ClaraBelenGomez">
+		<meta property="og:description" content="<?php echo htmlentities(get_the_excerpt(), ENT_QUOTES); ?>">
+		<meta property="twitter:description" content="<?php echo htmlentities(get_the_excerpt(), ENT_QUOTES); ?>">
+		<?php if(has_post_thumbnail()) { ?>
+			<meta property="og:image" content="<?php echo wp_get_attachment_url(get_post_thumbnail_id()); ?>">
+			<meta property="twitter:image" content="<?php echo wp_get_attachment_url(get_post_thumbnail_id()); ?>">
+		<?php } ?>
+	<?php endwhile; endif; ?>
+	<?php rewind_posts(); ?>
+<?php } else { ?>
+	<meta property="og:title" content="<?php bloginfo('name'); ?>">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="<?php bloginfo('url'); ?>">
+<?php } ?>
+<meta property="og:locale" content="es_ES">
+
+<meta property="fb:admins" content="1621837217">
+<meta property="fb:app_id" content="281305141912848">
+
 <title><?php bloginfo('name'); ?> | <?php is_home() ? bloginfo('description') : wp_title(''); ?></title>
  
 <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -14,7 +47,9 @@
 
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_url' ); ?>/css/style.min.css" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
- 
+
+<link rel="canonical" href="">
+
 <?php
     /* 
      *  Add this to support sites with sites with threaded comments enabled.
@@ -22,8 +57,6 @@
     if ( is_singular() && get_option( 'thread_comments' ) )
         wp_enqueue_script( 'comment-reply' );
 
-    wp_get_archives('type=monthly&format=link');
- 
     wp_head();
 ?>
 </head>
