@@ -45,7 +45,7 @@
   <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 <![endif]-->
 
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_url' ); ?>/css/style.min.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 <link rel="canonical" href="">
@@ -88,17 +88,17 @@
 <div class="container-logo">
 	<div class="pattern-logo"></div>
 	<div class="logo-inspiraciones">
-		<a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_directory'); ?>/images/logo-inspiraciones-colorful.png" width="507" height="115"></a>
+		<a href="<?php bloginfo('url'); ?>" class="icon-logo-inspiraciones-colorful sprite-icon"></a>
 	</div>
 </div>
 
 <div>
 	<div class="pull-right social-icons">
-		<a href="https://plus.google.com/u/0/106083749576655779266/posts" alt="Mi perfil de Google+"><img src="<?php bloginfo('template_directory') ?>/images/googleplus.png"></a>
-		<a href="https://www.facebook.com/inspirateconclara" alt="Mi página de Facebook"><img src="<?php bloginfo('template_directory') ?>/images/facebook.png"></a>
-		<a href="https://twitter.com/clarabelengomez" alt="Mi perfil de Twitter"><img src="<?php bloginfo('template_directory') ?>/images/twitter.png"></a>
-		<a href="http://www.pinterest.com" alt="Mi perfil de Pinterest"><img src="<?php bloginfo('template_directory') ?>/images/pinterest.png"></a>
-		<a href="<?php bloginfo('rss2_url'); ?>" alt="Mi feed RSS"><img src="<?php bloginfo('template_directory') ?>/images/rss.png"></a>
+		<a href="https://plus.google.com/u/0/106083749576655779266/posts" alt="Mi perfil de Google+" class="icon-googleplus sprite-icon"></a>
+		<a href="https://www.facebook.com/inspirateconclara" alt="Mi página de Facebook" class="icon-facebook sprite-icon"></a>
+		<a href="https://twitter.com/clarabelengomez" alt="Mi perfil de Twitter" class="icon-twitter sprite-icon"></a>
+		<a href="http://www.pinterest.com" alt="Mi perfil de Pinterest" class="icon-pinterest sprite-icon"></a>
+		<a href="<?php bloginfo('rss2_url'); ?>" alt="Mi feed RSS" class="icon-rss sprite-icon"></a>
 	</div>
 </div>
 

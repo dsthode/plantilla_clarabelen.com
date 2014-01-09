@@ -14,7 +14,8 @@ function register_my_menu() {
 
 // Enable post thumbnails
 add_theme_support('post-thumbnails');
-set_post_thumbnail_size(520, 250, true);
+set_post_thumbnail_size(200, 200, true);
+add_image_size('post_list_thumbnail', 200, 200, true);
 
 //Some simple code for our widget-enabled sidebar
 if ( function_exists('register_sidebar') )

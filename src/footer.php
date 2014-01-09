@@ -13,7 +13,7 @@
 	<p><a href="<?php bloginfo('rss2_url'); ?>">Latest Stories RSS</a> | <a href="<?php comments_rss_link('comment feed'); ?>">Comments RSS</a></p>
 </div>
 
-<script src="<?php bloginfo('template_url'); ?>/js/script.min.js" type="text/javascript"></script>
+<script src="<?php bloginfo('template_url'); ?>/script.js" type="text/javascript"></script>
 
 <?php wp_footer(); ?>
 </body>

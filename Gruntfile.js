@@ -10,10 +10,10 @@ module.exports = function(grunt) {
 		},
 		sprite: {
 			build: {
-				src: 'src/images/*.png',
+				src: ['src/images/*.png', '!src/images/logo-pattern.png'],
 				destImg: 'tmp/images/sprite.png',
 				destCSS: 'src/css/sprite.css',
-				imgPath: '../images/sprite.png',
+				imgPath: 'images/sprite.png',
 				engine: 'phantomjs'
 			}
 		},
@@ -24,8 +24,8 @@ module.exports = function(grunt) {
 				report: 'min'
       },
       build: {
-        src: 'src/js/*.js',
-        dest: 'build/js/script.min.js'
+        src: ['src/js/jquery-1.10.2.js', 'src/js/bootstrap.js', 'src/js/holder.js'],
+        dest: 'build/script.js'
       }
     },
 		cssmin: {
@@ -34,8 +34,16 @@ module.exports = function(grunt) {
 				report: 'min'
 			},
 			build: {
-				src: 'src/css/*.css',
-				dest: 'build/css/style.min.css'
+				src: ['src/css/bootstrap.css', 'src/css/bootstrap-theme.css', 'src/css/carousel.css', 'src/css/sprite.css', 'src/css/style.css'],
+				dest: 'build/style.css'
+			}
+		},
+		imagemin: {
+			build: {
+				files: {
+					'build/images/sprite.png': 'tmp/images/sprite.png',
+					'build/images/logo-pattern.png': 'src/images/logo-pattern.png'
+				}
 			}
 		},
 		copy: {
@@ -45,15 +53,20 @@ module.exports = function(grunt) {
 				src: '*.php',
 				dest: 'build/',
 				filter: 'isFile'
+			},
+			fonts: {
+				expand: true,
+				cwd: 'src',
+				src: 'fonts/*',
+				dest: 'build/'
+			},
+			deploy: {
+				expand: true,
+				cwd: 'build',
+				src: '**',
+				dest: '/Users/dsthode/Sites/wordpress/wp-content/themes/plantilla_clarabelen.com/'
 			}
 		},
-		imagemin: {
-			build: {
-				files: {
-					'build/images/sprite.png': 'tmp/images/sprite.png'
-				}
-			}
-		}
   });
 
 	grunt.loadNpmTasks('grunt-contrib-clean');
@@ -64,6 +77,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 
   // Default task(s).
-  grunt.registerTask('default', ['clean', 'sprite', 'uglify', 'cssmin', 'copy', 'imagemin']);
+  grunt.registerTask('default', ['clean', 'sprite', 'uglify', 'cssmin', 'imagemin', 'copy']);
 
 };
