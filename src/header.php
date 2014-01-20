@@ -93,7 +93,7 @@
 </div>
 
 <div>
-	<div class="pull-right social-icons">
+	<div class="pull-right">
 		<a href="https://plus.google.com/u/0/106083749576655779266/posts" alt="Mi perfil de Google+" class="icon-googleplus sprite-icon"></a>
 		<a href="https://www.facebook.com/inspirateconclara" alt="Mi página de Facebook" class="icon-facebook sprite-icon"></a>
 		<a href="https://twitter.com/clarabelengomez" alt="Mi perfil de Twitter" class="icon-twitter sprite-icon"></a>

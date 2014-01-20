@@ -9,8 +9,9 @@
 <!-- FOOTER -->
 <div class="container container-footer">
 	<p class="pull-right back-to-top"><a href="#" alt="Volver arriba"><span class="glyphicon glyphicon-arrow-up"></span></a></p>
-	<p>&copy; 2013 <?php bloginfo('name'); ?> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-	<p><a href="<?php bloginfo('rss2_url'); ?>">Latest Stories RSS</a> | <a href="<?php comments_rss_link('comment feed'); ?>">Comments RSS</a></p>
+	<div class="center-block">
+		<p><?php bloginfo('name'); ?> Copyright &copy; <?php echo date('Y'); ?>. Todos los derechos reservados. </p>
+	</div>
 </div>
 
 <script src="<?php bloginfo('template_url'); ?>/script.js" type="text/javascript"></script>

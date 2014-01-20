@@ -19,7 +19,11 @@ add_image_size('post_list_thumbnail', 200, 200, true);
 
 //Some simple code for our widget-enabled sidebar
 if ( function_exists('register_sidebar') )
-    register_sidebar();
+	register_sidebar(array(
+		'before_title' => '<h5 class="widget-label">', 
+		'after_title' => '</h5>', 
+		'before_widget' => '<div class="sidebar-widget">', 
+		'after_widget' => '</div>'));
 
 
 //Code for custom background support
