@@ -19,7 +19,7 @@
 
 		<div class="col-sm-12 post-list">
 			<?php if(have_posts()) : ?>
-				<h3 class="section-label">Entradas recientes</h3>
+				<h2 class="section-label">Entradas recientes</h2>
 				<?php include('post_list.php'); ?>
 				<div class="navigation col-sm-12">
 					<div class="col-sm-6 navigation-anteriores"><?php previous_posts_link('&laquo; Entradas anteriores'); ?></div>

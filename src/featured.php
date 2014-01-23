@@ -13,7 +13,7 @@ $destacados = new WP_Query( $args );
 
 	<?php if($destacados->have_posts()) : ?>
 		<div class="col-sm-12">
-			<h3 class="section-label">Tutoriales destacados</h3>
+			<h2 class="section-label">Tutoriales destacados</h2>
 			<?php $destacado_count = 1 ?>
 			<?php while($destacados->have_posts()) : $destacados->the_post(); ?>
 				<div class="col-sm-4">
