@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta property="og:site_name" content="<?php bloginfo('name'); ?>">
 <?php if(is_singular())  { ?>
 	<meta property="og:title" content="<?php echo get_the_title(); ?>">
@@ -46,6 +46,7 @@
 <![endif]-->
 
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 <link rel="canonical" href="">
@@ -61,9 +62,9 @@
 ?>
 </head>
 <body>
-	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="navbar secondary-menu" role="navigation">
 		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#inspiraciones-navbar-collapse">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#secondary-menu-navbar-collapse">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -76,7 +77,7 @@
 				'theme_location'    => 'secondary-menu',
 				'depth'             => 3,
 				'container'         => 'div',
-				'container_id'			=> 'inspiraciones-navbar-collapse',
+				'container_id'			=> 'secondary-menu-navbar-collapse',
 				'container_class'   => 'collapse navbar-collapse navbar-ex1-collapse',
 				'menu_class'        => 'nav navbar-nav',
 				'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
@@ -102,19 +103,27 @@
 	</div>
 </div>
 
-<div class="container container-second-menu">
-		<?php  /* menu */
-			wp_nav_menu( array(
-				'menu'              => 'primary',
-				'theme_location'    => 'primary-menu',
-				'depth'             => 3,
-				'container'         => 'div',
-				'container_id'			=> '',
-				'container_class'   => '',
-				'menu_class'        => 'nav navbar-nav',
-				'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-				'walker'            => new wp_bootstrap_navwalker())
-			); 
+<div class="navbar primary-menu" role="navigation">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-menu-navbar-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	</div>
+	<?php  /* menu */
+		wp_nav_menu( array(
+			'menu'              => 'primary',
+			'theme_location'    => 'primary-menu',
+			'depth'             => 3,
+			'container'         => 'div',
+			'container_id'			=> 'primary-menu-navbar-collapse',
+			'container_class'   => 'collapse navbar-collapse navbar-ex1-collapse',
+			'menu_class'        => 'nav navbar-nav',
+			'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+			'walker'            => new wp_bootstrap_navwalker())
+		); 
 	?>
 </div>
 <div class="container container-content">

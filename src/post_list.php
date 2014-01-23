@@ -1,13 +1,13 @@
 <?php while(have_posts()) : the_post(); ?>
-	<div class="post media">
-		<a class="pull-left post-featured-image-thumbnail" href="<?php the_permalink(); ?>"><?php the_post_thumbnail('post_list_thumbnail', array('class' => 'media-object')); ?></a>
-		<div class="media-body">
-			<p><?php the_date(); ?> | <?php comments_number('Sin comentarios', 'Un comentario', '% comentarios'); ?> | por <?php the_author(); ?></p>
-			<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-			<div class="entry">   
-				<?php the_excerpt(); ?>
-				<a class="btn btn-default" href="<?php the_permalink(); ?>">Seguir leyendo ...</a>
-			</div>
+	<div class="post col-sm-12">
+		<div class="col-sm-4 post-list-thumbnail">
+			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('post_list_thumbnail', array('class' => 'post-list-thumbnail-image')); ?></a>
+		</div>
+		<div class="col-sm-8">
+			<p class="post-list-meta"><?php the_date(); ?> | <span class="post-list-comments"><?php comments_number('Sin comentarios', 'Un comentario', '% comentarios'); ?></span></p>
+			<h3 class="post-list-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+			<?php the_excerpt(); ?>
+			<span class="seguir-leyendo"><a class="btn btn-default" href="<?php the_permalink(); ?>">SEGUIR LEYENDO &raquo;</a></span>
 		</div>
 	</div>
 <?php endwhile; ?>

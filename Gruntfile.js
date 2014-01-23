@@ -20,7 +20,6 @@ module.exports = function(grunt) {
     uglify: {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
-				sourceMap: 'build/source.map.js',
 				report: 'min'
       },
       build: {
@@ -30,11 +29,10 @@ module.exports = function(grunt) {
     },
 		cssmin: {
 			options: {
-				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
 				report: 'min'
 			},
 			build: {
-				src: ['src/css/bootstrap.css', 'src/css/bootstrap-theme.css', 'src/css/carousel.css', 'src/css/sprite.css', 'src/css/style.css'],
+				src: ['src/css/template-details.css', 'src/css/bootstrap.css', 'src/css/bootstrap-theme.css', 'src/css/carousel.css', 'src/css/sprite.css', 'src/css/style.css'],
 				dest: 'build/style.css'
 			}
 		},
@@ -60,6 +58,13 @@ module.exports = function(grunt) {
 				src: 'fonts/*',
 				dest: 'build/'
 			},
+			screenshot: {
+				expand: true,
+				cwd: 'src',
+				src: 'screenshot.png',
+				dest: 'build/',
+				filter: 'isFile'
+			},
 			deploy: {
 				expand: true,
 				cwd: 'build',
@@ -67,6 +72,18 @@ module.exports = function(grunt) {
 				dest: '/Users/dsthode/Sites/wordpress/wp-content/themes/plantilla_clarabelen.com/'
 			}
 		},
+		compress: {
+			build: {
+				options: {
+					archive: 'plantilla_clarabelen.com.zip',
+					mode: 'zip'
+				},
+				expand: true,
+				cwd: 'build/',
+				src: ['**/*'],
+				dest: 'plantilla_clarabelen.com'
+			}
+		}
   });
 
 	grunt.loadNpmTasks('grunt-contrib-clean');
@@ -75,8 +92,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
+	grunt.loadNpmTasks('grunt-contrib-compress');
 
   // Default task(s).
-  grunt.registerTask('default', ['clean', 'sprite', 'uglify', 'cssmin', 'imagemin', 'copy']);
+  grunt.registerTask('default', ['clean', 'sprite', 'uglify', 'cssmin', 'imagemin', 'copy', 'compress']);
 
 };
