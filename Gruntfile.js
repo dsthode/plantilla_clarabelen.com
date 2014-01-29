@@ -24,7 +24,7 @@ module.exports = function(grunt) {
       },
       build: {
         src: ['src/js/jquery-1.10.2.js', 'src/js/bootstrap.js', 'src/js/holder.js'],
-        dest: 'build/script.js'
+        dest: 'build/plantilla_clarabelen.com/script.js'
       }
     },
 		cssmin: {
@@ -33,14 +33,14 @@ module.exports = function(grunt) {
 			},
 			build: {
 				src: ['src/css/template-details.css', 'src/css/bootstrap.css', 'src/css/bootstrap-theme.css', 'src/css/carousel.css', 'src/css/sprite.css', 'src/css/style.css'],
-				dest: 'build/style.css'
+				dest: 'build/plantilla_clarabelen.com/style.css'
 			}
 		},
 		imagemin: {
 			build: {
 				files: {
-					'build/images/sprite.png': 'tmp/images/sprite.png',
-					'build/images/logo-pattern.png': 'src/images/logo-pattern.png'
+					'build/plantilla_clarabelen.com/images/sprite.png': 'tmp/images/sprite.png',
+					'build/plantilla_clarabelen.com/images/logo-pattern.png': 'src/images/logo-pattern.png'
 				}
 			}
 		},
@@ -49,27 +49,27 @@ module.exports = function(grunt) {
 				expand: true,
 				cwd: 'src',
 				src: '*.php',
-				dest: 'build/',
+				dest: 'build/plantilla_clarabelen.com/',
 				filter: 'isFile'
 			},
 			fonts: {
 				expand: true,
 				cwd: 'src',
 				src: 'fonts/*',
-				dest: 'build/'
+				dest: 'build/plantilla_clarabelen.com/'
 			},
 			screenshot: {
 				expand: true,
 				cwd: 'src',
 				src: 'screenshot.png',
-				dest: 'build/',
+				dest: 'build/plantilla_clarabelen.com/',
 				filter: 'isFile'
 			},
 			deploy: {
 				expand: true,
-				cwd: 'build',
+				cwd: 'build/plantilla_clarabelen.com',
 				src: '**',
-				dest: '/Users/dsthode/Sites/wordpress/wp-content/themes/plantilla_clarabelen.com/'
+				dest: '/var/www/dsthode.info/temp/wordpress/wp-content/themes/plantilla_clarabelen.com/'
 			}
 		},
 		compress: {
@@ -79,7 +79,7 @@ module.exports = function(grunt) {
 					mode: 'zip'
 				},
 				expand: true,
-				cwd: 'build/',
+				cwd: 'build/plantilla_clarabelen.com',
 				src: ['**/*'],
 				dest: 'plantilla_clarabelen.com'
 			}
