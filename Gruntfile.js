@@ -64,12 +64,6 @@ module.exports = function(grunt) {
 				src: 'screenshot.png',
 				dest: 'build/plantilla_clarabelen.com/',
 				filter: 'isFile'
-			},
-			deploy: {
-				expand: true,
-				cwd: 'build/plantilla_clarabelen.com',
-				src: '**',
-				dest: '/var/www/dsthode.info/temp/wordpress/wp-content/themes/plantilla_clarabelen.com/'
 			}
 		},
 		compress: {
