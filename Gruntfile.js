@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 		clean: {
 			build: {
-				src: ['build/', 'tmp/']
+				src: ['build/*', 'tmp/']
 			}
 		},
 		sprite: {
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
       },
       build: {
         src: ['src/js/jquery-1.10.2.js', 'src/js/bootstrap.js', 'src/js/holder.js'],
-        dest: 'build/plantilla_clarabelen.com/script.js'
+        dest: 'build/script.js'
       }
     },
 		cssmin: {
@@ -33,14 +33,14 @@ module.exports = function(grunt) {
 			},
 			build: {
 				src: ['src/css/template-details.css', 'src/css/bootstrap.css', 'src/css/bootstrap-theme.css', 'src/css/carousel.css', 'src/css/sprite.css', 'src/css/style.css'],
-				dest: 'build/plantilla_clarabelen.com/style.css'
+				dest: 'build/style.css'
 			}
 		},
 		imagemin: {
 			build: {
 				files: {
-					'build/plantilla_clarabelen.com/images/sprite.png': 'tmp/images/sprite.png',
-					'build/plantilla_clarabelen.com/images/logo-pattern.png': 'src/images/logo-pattern.png'
+					'build/images/sprite.png': 'tmp/images/sprite.png',
+					'build/images/logo-pattern.png': 'src/images/logo-pattern.png'
 				}
 			}
 		},
@@ -49,20 +49,20 @@ module.exports = function(grunt) {
 				expand: true,
 				cwd: 'src',
 				src: '*.php',
-				dest: 'build/plantilla_clarabelen.com/',
+				dest: 'build/',
 				filter: 'isFile'
 			},
 			fonts: {
 				expand: true,
 				cwd: 'src',
 				src: 'fonts/*',
-				dest: 'build/plantilla_clarabelen.com/'
+				dest: 'build/'
 			},
 			screenshot: {
 				expand: true,
 				cwd: 'src',
 				src: 'screenshot.png',
-				dest: 'build/plantilla_clarabelen.com/',
+				dest: 'build/',
 				filter: 'isFile'
 			}
 		},
@@ -73,7 +73,7 @@ module.exports = function(grunt) {
 					mode: 'zip'
 				},
 				expand: true,
-				cwd: 'build/plantilla_clarabelen.com',
+				cwd: 'build',
 				src: ['**/*'],
 				dest: 'plantilla_clarabelen.com'
 			}
