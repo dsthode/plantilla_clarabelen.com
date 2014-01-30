@@ -20,10 +20,11 @@ module.exports = function(grunt) {
     uglify: {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
-				report: 'min'
+				report: 'min',
+				mangle: false
       },
       build: {
-        src: ['src/js/jquery-1.10.2.js', 'src/js/bootstrap.js', 'src/js/holder.js'],
+        src: ['src/js/bootstrap.js', 'src/js/holder.js', 'src/js/script.js'],
         dest: 'build/script.js'
       }
     },
