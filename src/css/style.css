@@ -108,11 +108,19 @@ body {
 }
 
 a {
-	color: #202020 !important;
+	color: #c65b8e !important;
 }
 
 a:hover {
 	color: #c65b8e !important;
+}
+
+.navbar a, .entry-title a {
+	color: #202020 !important;
+}
+
+a .entry-title {
+	color: #202020 !important;
 }
 
 .sprite-icon {
