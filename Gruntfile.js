@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 				mangle: false
       },
       build: {
-        src: ['src/js/bootstrap.js', 'src/js/holder.js', 'src/js/script.js'],
+        src: ['src/js/bootstrap.js', 'src/js/holder.js', 'src/js/script.js', 'src/js/submenu.js'],
         dest: 'build/script.js'
       }
     },
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 				report: 'min'
 			},
 			build: {
-				src: ['src/css/template-details.css', 'src/css/bootstrap.css', 'src/css/bootstrap-theme.css', 'src/css/carousel.css', 'src/css/sprite.css', 'src/css/style.css'],
+				src: ['src/css/template-details.css', 'src/css/bootstrap.css', 'src/css/bootstrap-theme.css', 'src/css/carousel.css', 'src/css/sprite.css', 'src/css/style.css', 'src/css/submenu.css'],
 				dest: 'build/style.css'
 			}
 		},
