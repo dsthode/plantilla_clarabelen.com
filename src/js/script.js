@@ -2,6 +2,7 @@ var sc_project=5906083;
 var sc_invisible=1; 
 var sc_security="a1822d2d";
 
+/*
 try {
 	(adsbygoogle = window.adsbygoogle || []).push({});
 	(adsbygoogle = window.adsbygoogle || []).push({});
@@ -11,6 +12,23 @@ try {
 function googleTranslateElementInit() { 
 	new google.translate.TranslateElement({pageLanguage: 'es'}, 'google_translate_element');
 } 
+*/
+
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+
+try {
+	(function() {
+	 var gads = document.createElement('script');
+	 gads.async = true;
+	 gads.type = 'text/javascript';
+	 var useSSL = 'https:' == document.location.protocol;
+	 gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+	 var node = document.getElementsByTagName('script')[0];
+	 node.parentNode.insertBefore(gads, node);
+	 })();
+} catch (err) {
+}
 
 function loadTranslator()  {
 	var tra= document.createElement('script');
@@ -39,6 +57,30 @@ function loadAdsense() {
 	s.parentNode.insertBefore(adsrc, s);
 }
 
+function loadAdsenseNuevo() {
+	googletag.cmd.push(function() {
+		googletag.defineSlot('/1024259/claraBelen_300', [300, 250], 'div-gpt-ad-1392106267992-0').addService(googletag.pubads());
+		googletag.defineSlot('/1024259/claraBelen_320', [320, 50], 'div-gpt-ad-1392106267992-1').addService(googletag.pubads());
+		googletag.defineSlot('/1024259/claraBelen_336', [336, 280], 'div-gpt-ad-1392106267992-2').addService(googletag.pubads());
+		googletag.defineSlot('/1024259/claraBelen_728', [728, 90], 'div-gpt-ad-1392106267992-3').addService(googletag.pubads());
+		googletag.pubads().enableSingleRequest();
+		googletag.enableServices();
+	});
+
+//	$(document).ready(function() {
+		enquire
+		.register("screen and (max-width:600px)", function() { 
+			googletag.cmd.push(function() { googletag.display('div-gpt-ad-1392106267992-1'); });
+			googletag.cmd.push(function() { googletag.display('div-gpt-ad-1392106267992-0'); });
+			})
+		.register("screen and (min-width:900px)", function() {
+			googletag.cmd.push(function() { googletag.display('div-gpt-ad-1392106267992-0'); });
+			googletag.cmd.push(function() { googletag.display('div-gpt-ad-1392106267992-2'); });
+			googletag.cmd.push(function() { googletag.display('div-gpt-ad-1392106267992-3'); });
+			});	
+//	});
+}
+
 function initializeSubmenus() {
 	jQuery('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
 		// Avoid following the href location when clicking
@@ -54,7 +96,7 @@ function initializeSubmenus() {
 function loadThingsOnLoad(){
 	loadTranslator();
 	loadStatCounter();
-	loadAdsense();
+	loadAdsenseNuevo();
 	initializeSubmenus();
 }
 

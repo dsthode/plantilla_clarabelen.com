@@ -221,3 +221,15 @@ a .entry-title {
 	text-align: right;
 }
 
+@media (max-width: 600px) {
+	.publi-responsive-grande {
+		display: none;
+	}
+}
+
+@media (min-width: 900px) {
+	.publi-responsive-peque {
+		display: none;
+	}
+}
+
