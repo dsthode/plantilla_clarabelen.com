@@ -48,7 +48,26 @@ body {
 	position: relative;
 	z-index: 2;
 	margin: 0 auto;
-	width: 507px;
+}
+
+@media (max-width: 767px) {
+	.logo-inspiraciones {
+		width: 381px;
+	}
+
+	.logo-inspiraciones-colorful {
+		@extend .icon-logo-inspiraciones-colorful-small;
+	}
+}
+
+@media (min-width: 768px) {
+	.logo-inspiraciones {
+		width: 507px;
+	}
+
+	.logo-inspiraciones-colorful {
+		@extend .icon-logo-inspiraciones-colorful;
+	}
 }
 
 .primary-menu {
