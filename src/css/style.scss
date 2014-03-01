@@ -1,3 +1,5 @@
+@import 'sprite';
+
 @font-face {
     font-family: 'open_sansregular';
     src: url('fonts/OpenSans-Regular-webfont.eot');
@@ -56,7 +58,7 @@ body {
 	}
 
 	.logo-inspiraciones-colorful {
-		@extend .icon-logo-inspiraciones-colorful-small;
+		@include sprite($logo-inspiraciones-colorful-small);
 	}
 }
 
@@ -66,7 +68,7 @@ body {
 	}
 
 	.logo-inspiraciones-colorful {
-		@extend .icon-logo-inspiraciones-colorful;
+		@include sprite($logo-inspiraciones-colorful);
 	}
 }
 
@@ -170,7 +172,7 @@ a .entry-title {
 	}
 }
 
-@media (max-width: 991px and min-width: 768px) {
+@media (max-width: 991px) and (min-width: 768px) {
 	.post-destacado {
 		min-width: 140px;
 		width: 140px;
@@ -250,5 +252,25 @@ a .entry-title {
 	.publi-responsive-peque {
 		display: none;
 	}
+}
+
+.icon-googleplus {
+	@include sprite($googleplus);
+}
+
+.icon-facebook {
+	@include sprite($facebook);
+}
+
+.icon-twitter {
+	@include sprite($twitter);
+}
+
+.icon-pinterest {
+	@include sprite($pinterest);
+}
+
+.icon-rss {
+	@include sprite($rss);
 }
 

@@ -28,12 +28,19 @@ module.exports = function(grunt) {
         dest: 'build/script.js'
       }
     },
+		sass: {
+			build: {
+				files: {
+					'src/css/style.css': 'src/css/style.scss'
+				}
+			}
+		},
 		cssmin: {
 			options: {
 				report: 'min'
 			},
 			build: {
-				src: ['src/css/template-details.css', 'src/css/bootstrap.css', 'src/css/bootstrap-theme.css', 'src/css/carousel.css', 'src/css/sprite.css', 'src/css/style.css', 'src/css/submenu.css'],
+				src: ['src/css/template-details.css', 'src/css/bootstrap.css', 'src/css/bootstrap-theme.css', 'src/css/carousel.css', 'src/css/style.css', 'src/css/submenu.css'],
 				dest: 'build/style.css'
 			}
 		},
@@ -88,8 +95,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-compress');
-
+	grunt.loadNpmTasks('grunt-contrib-sass');
   // Default task(s).
-  grunt.registerTask('default', ['clean', 'sprite', 'uglify', 'cssmin', 'imagemin', 'copy', 'compress']);
+  grunt.registerTask('default', ['clean', 'sprite', 'uglify', 'sass', 'cssmin', 'imagemin', 'copy', 'compress']);
 
 };
