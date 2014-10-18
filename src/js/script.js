@@ -2,13 +2,13 @@ var sc_project=5906083;
 var sc_invisible=1; 
 var sc_security="a1822d2d";
 
-/*
 try {
 	(adsbygoogle = window.adsbygoogle || []).push({});
 	(adsbygoogle = window.adsbygoogle || []).push({});
 	(adsbygoogle = window.adsbygoogle || []).push({});
 } catch (err) {}
 
+/*
 function googleTranslateElementInit() { 
 	new google.translate.TranslateElement({pageLanguage: 'es'}, 'google_translate_element');
 } 
@@ -96,7 +96,7 @@ function initializeSubmenus() {
 function loadThingsOnLoad(){
 	loadTranslator();
 	loadStatCounter();
-	loadAdsenseNuevo();
+	loadAdsense();
 	initializeSubmenus();
 }
 
