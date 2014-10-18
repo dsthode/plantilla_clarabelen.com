@@ -9,11 +9,9 @@ try {
 	(adsbygoogle = window.adsbygoogle || []).push({});
 } catch (err) {}
 
-/*
 function googleTranslateElementInit() { 
 	new google.translate.TranslateElement({pageLanguage: 'es'}, 'google_translate_element');
 } 
-*/
 
 var googletag = googletag || {};
 googletag.cmd = googletag.cmd || [];
@@ -99,6 +97,7 @@ function loadThingsOnLoad(){
 	loadStatCounter();
 	loadAdsense();
 	initializeSubmenus();
+	googleTranslateElementInit();
 }
 
 if (window.addEventListener) {
