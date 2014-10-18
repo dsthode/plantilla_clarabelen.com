@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 				mangle: false
       },
       build: {
-        src: ['src/js/bootstrap.js', 'src/js/holder.js', 'src/js/script.js', 'src/js/submenu.js'],
+        src: ['src/js/bootstrap.js', 'src/js/holder.js', 'src/js/enquire.js', 'src/js/script.js'],
         dest: 'build/script.js'
       }
     },
