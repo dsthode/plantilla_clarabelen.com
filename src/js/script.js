@@ -10,7 +10,9 @@ try {
 } catch (err) {}
 
 function googleTranslateElementInit() { 
-	new google.translate.TranslateElement({pageLanguage: 'es'}, 'google_translate_element');
+	try {
+		new google.translate.TranslateElement({pageLanguage: 'es'}, 'google_translate_element');
+	} catch (err) {}
 } 
 
 var googletag = googletag || {};
