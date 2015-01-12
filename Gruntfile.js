@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 			build: {
 				src: ['src/images/*.png', '!src/images/logo-pattern.png'],
 				destImg: 'tmp/images/sprite.png',
-				destCSS: 'src/css/sprite.css',
+				destCSS: 'src/css/sprite.scss',
 				imgPath: 'images/sprite.png',
 				engine: 'phantomjs'
 			}

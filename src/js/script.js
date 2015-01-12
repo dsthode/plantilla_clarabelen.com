@@ -82,6 +82,17 @@ function loadAdsenseNuevo() {
 //	});
 }
 
+function loadPinit() {
+	try {
+    var f = document.getElementsByTagName('SCRIPT')[0], p = document.createElement('SCRIPT');
+    p.type = 'text/javascript';
+    p.async = true;
+    p.src = '//assets.pinterest.com/js/pinit.js';
+		p.setAttribute('data-pin-hover', true);
+		f.parentNode.insertBefore(p, f);
+	} catch (err) {}
+}
+
 function initializeSubmenus() {
 	jQuery('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
 		// Avoid following the href location when clicking
@@ -94,12 +105,14 @@ function initializeSubmenus() {
 		jQuery(this).parent().addClass('open');
 	});
 }
+
 function loadThingsOnLoad(){
 	loadTranslator();
 	loadStatCounter();
 	loadAdsense();
 	initializeSubmenus();
 	googleTranslateElementInit();
+	loadPinit();
 }
 
 if (window.addEventListener) {
