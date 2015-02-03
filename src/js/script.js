@@ -106,6 +106,17 @@ function initializeSubmenus() {
 	});
 }
 
+function fixAnalyticsBounceRate() {
+	(function (tos) {
+		window.setInterval(function () {
+			tos = (function (t) {
+				return t[0] == 50 ? (parseInt(t[1]) + 1) + ':00' : (t[1] || '0') + ':' + (parseInt(t[0]) + 10);
+			})(tos.split(':').reverse());
+			window.pageTracker ? pageTracker._trackEvent('Time', 'Log', tos) : _gaq.push(['_trackEvent', 'Time', 'Log', tos]);
+		}, 30000);
+	})('00');
+}
+
 function loadThingsOnLoad(){
 	loadTranslator();
 	loadStatCounter();
@@ -113,6 +124,7 @@ function loadThingsOnLoad(){
 	initializeSubmenus();
 	googleTranslateElementInit();
 	loadPinit();
+	fixAnalyticsBounceRate();
 }
 
 if (window.addEventListener) {
