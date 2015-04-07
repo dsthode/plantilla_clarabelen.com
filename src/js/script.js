@@ -57,7 +57,7 @@ function loadAdsense() {
 	var s = document.getElementsByTagName('script')[0];
 	s.parentNode.insertBefore(adsrc, s);
 }
-
+/*
 function loadAdsenseNuevo() {
 	googletag.cmd.push(function() {
 		googletag.defineSlot('/1024259/claraBelen_300', [300, 250], 'div-gpt-ad-1392106267992-0').addService(googletag.pubads());
@@ -81,7 +81,7 @@ function loadAdsenseNuevo() {
 			});	
 //	});
 }
-
+*/
 function loadPinit() {
 	try {
     var f = document.getElementsByTagName('SCRIPT')[0], p = document.createElement('SCRIPT');
