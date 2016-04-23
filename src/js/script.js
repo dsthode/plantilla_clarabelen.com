@@ -112,7 +112,7 @@ function fixAnalyticsBounceRate() {
 			tos = (function (t) {
 				return t[0] == 50 ? (parseInt(t[1]) + 1) + ':00' : (t[1] || '0') + ':' + (parseInt(t[0]) + 10);
 			})(tos.split(':').reverse());
-			window.pageTracker ? pageTracker._trackEvent('Time', 'Log', tos) : _gaq.push(['_trackEvent', 'Time', 'Log', tos]);
+			window.pageTracker ? pageTracker._trackEvent('Time', 'Log', tos) : ga('send', 'Time', 'Log', tos]);
 		}, 30000);
 	})('00');
 }
