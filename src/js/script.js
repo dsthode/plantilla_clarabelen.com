@@ -117,6 +117,15 @@ function fixAnalyticsBounceRate() {
 	})('00');
 }
 
+function setEtsyLinkAnalytics() {
+	var link = jQuery('#etsy_link');
+	if (link && link.length > 0) {
+		link.click(function() {
+			ga('send', 'Etsy', 'click');
+		});
+	}
+};
+
 function loadFacebookLikeButtons(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -133,6 +142,7 @@ function loadThingsOnLoad(){
 	googleTranslateElementInit();
 	loadPinit();
 	fixAnalyticsBounceRate();
+	setEtsyLinkAnalytics();
 	loadFacebookLikeButtons(document, 'script', 'facebook-jssdk');
 }
 
